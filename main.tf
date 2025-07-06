@@ -11,3 +11,10 @@ resource "aws_vpc" "main" {
         Name = "main-vpc-1"
     }
 }
+terraform {
+  backend "s3" {
+    bucket = "tfstate-bucket-1x"
+    key    = "infraupdate-1/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
